@@ -1,0 +1,27 @@
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+
+.tooltip-xl {
+  .tooltip-inner {
+    max-width: 700px;
+  }
+}
+
+.tooltip-lg {
+  .tooltip-inner {
+    max-width: 400px;
+  }
+}
+
+.tooltip-md {
+  .tooltip-inner {
+    max-width: 250px;
+  }
+}
