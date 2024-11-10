@@ -4,14 +4,12 @@ import React from 'react'
 import { Form } from 'react-bootstrap'
 
 import FieldError from './FieldError'
-import FieldLabel, { TooltipHint } from './FieldLabel'
+import FieldLabel from './FieldLabel'
 
 interface Props {
   name: string
   label?: string | React.ReactNode
-  labelWrapperClassName?: string
   labelClassName?: string
-  tooltipHint?: TooltipHint
   hideError?: boolean
   isDisabled?: boolean
   onChange?: (value: boolean) => void
@@ -20,9 +18,7 @@ interface Props {
 const CheckboxInput: React.FC<Props> = ({
   name,
   label,
-  labelWrapperClassName,
   labelClassName,
-  tooltipHint,
   hideError = false,
   isDisabled,
   onChange,
@@ -55,9 +51,7 @@ const CheckboxInput: React.FC<Props> = ({
         {label && (
           <FieldLabel
             htmlFor={id}
-            tooltipHint={tooltipHint}
             className={classNames('mb-0', labelClassName)}
-            wrapperClassName={labelWrapperClassName}
           >
             {label}
           </FieldLabel>

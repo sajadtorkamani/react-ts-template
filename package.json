@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && npm run copy-redirects-file",
+    "copy-redirects-file": "cp _redirects dist/",
     "preview": "vite preview",
     "format:check": "prettier --check src/",
     "format:fix": "prettier --write src/"

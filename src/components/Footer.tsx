@@ -1,6 +1,7 @@
 import React from 'react'
-import { APP_NAME, GITHUB_REPO_URL } from "../lib/constants";
-import { Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap'
+
+import { APP_NAME, GITHUB_REPO_URL } from '../lib/constants'
 
 const Footer: React.FC = () => (
   <footer className="site-footer bg-light p-3 border-top text-muted">
@@ -9,8 +10,16 @@ const Footer: React.FC = () => (
         {APP_NAME} &copy; {new Date().getFullYear()}
       </div>
 
-      <a href={GITHUB_REPO_URL} target="_blank" className="text-inherit">View on
-        GitHub</a>
+      {GITHUB_REPO_URL && (
+        <a
+          href={GITHUB_REPO_URL}
+          target="_blank"
+          className="text-inherit"
+          rel="noreferrer"
+        >
+          View on GitHub
+        </a>
+      )}
     </Container>
   </footer>
 )

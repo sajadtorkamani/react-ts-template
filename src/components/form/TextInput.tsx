@@ -3,9 +3,9 @@ import { useField, useFormikContext } from 'formik'
 import React, { ChangeEventHandler, CSSProperties, useState } from 'react'
 import { Form, InputGroup } from 'react-bootstrap'
 
-import { THEME_PALETTE } from '../../lib/constants'
+import { PALETTE } from '../../lib/constants'
 import FieldError from './FieldError'
-import FieldLabel, { ModalHint, TooltipHint } from './FieldLabel'
+import FieldLabel from './FieldLabel'
 import HelpText from './HelpText'
 
 export interface TextInputProps {
@@ -19,8 +19,6 @@ export interface TextInputProps {
   onChange?: (newValue: string) => void
   placeholder?: string
   style?: CSSProperties
-  tooltipHint?: TooltipHint
-  modalHint?: ModalHint
   type?: string
   isDisabled?: boolean
   transformErrorMessage?: (originalError: string) => React.ReactElement | string
@@ -41,8 +39,6 @@ const TextInput: React.FC<TextInputProps> = ({
   onChange,
   placeholder,
   style,
-  tooltipHint,
-  modalHint,
   type,
   isDisabled,
   transformErrorMessage,
@@ -72,7 +68,7 @@ const TextInput: React.FC<TextInputProps> = ({
         <InputGroup.Text
           className={classNames({ 'border-danger': showError }, 'border-end-0')}
           style={{
-            backgroundColor: isDisabled ? THEME_PALETTE.disabled : 'white',
+            backgroundColor: isDisabled ? PALETTE.disabled : 'white',
           }}
         >
           {inputGroupText}
@@ -116,11 +112,7 @@ const TextInput: React.FC<TextInputProps> = ({
 
   return (
     <>
-      {label && (
-        <FieldLabel htmlFor={id} modalHint={modalHint}>
-          {label}
-        </FieldLabel>
-      )}
+      {label && <FieldLabel htmlFor={id}>{label}</FieldLabel>}
 
       {inputGroupText ? renderWithInputGroup() : renderWithoutInputGroup()}
 
