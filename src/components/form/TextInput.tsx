@@ -9,7 +9,7 @@ import FieldLabel from './FieldLabel'
 import HelpText from './HelpText'
 
 export interface TextInputProps {
-  autoFocus?: boolean | AutoFocusFn
+  autoFocus?: boolean | ((value: string) => boolean)
   className?: string
   inputGroupText?: string
   label?: string | React.ReactNode
@@ -25,8 +25,6 @@ export interface TextInputProps {
   step?: string
   helpText?: React.ReactNode | string
 }
-
-type AutoFocusFn = (value: string) => boolean
 
 const TextInput: React.FC<TextInputProps> = ({
   autoFocus,
