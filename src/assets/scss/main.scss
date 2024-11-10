@@ -1,10 +1,4 @@
-body,
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+@import 'bootstrap/scss/bootstrap';
 
-.main-content {
-  flex: 1;
-}
+@import 'base';
+@import 'utilities';
